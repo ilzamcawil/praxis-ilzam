@@ -1,0 +1,43 @@
+{% block content %}
+<div class="p-5">
+  <form action="" method="post"
+    {% csrf_token %}
+    <label>jenis</label>
+    <select class="from-select" name="jenis">
+        <option selected>pilih</option>
+        <option value="kering">kering</option>
+        <option value="basah">basah</option>
+    </select>
+    <label>nama</label>
+    <input type="text" name="nama" class="form-control">
+    <label>harga</label>
+    <input type="number" name="harga" class="form-control"><br>    
+    <button type="submit" class="btn btn-primary">tambah</button>
+  </form>
+</div>
+  <div>
+      <table class="table">
+          <thead>
+              <th>no</th>
+              <th>nama</th>
+              <th>jenis</th>
+              <th>harga</th>
+              <th>aksi</th>
+          </thead>
+          <tbody>
+              {% for d in data %}
+              <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{d.nama}}</td>
+                  <td>{{d.jenis}}</td>
+                  <td>{{d.harga}}</td>
+                  <td>
+                      <a href="" class="btn btn-success">detail</a>
+                      <a href="" class="btn btn-warning">edit</a>
+                      <a href="" class="btn btn-danger">hapus</a>
+                  </td>
+              </tr>
+              {% endfor %}
+          </tbody>
+  </div>
+
