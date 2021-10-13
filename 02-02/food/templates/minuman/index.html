@@ -9,6 +9,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container text-center">
+        <h1>MINUM_OPO_TO...?</h1>
+    </div>
    <div class="p-5">
         <form action="" method="POST">
         {%csrf_token%}
@@ -41,9 +44,9 @@
                         <td>{{d.jenis}}</td>
                         <td>{{d.harga}}</td>
                         <td>
-                            <a href="detail/{{d.id}}" class="btn btn-success">Detail</a>
-                            <a href="edit/{{d.id}}" class="btn btn-warning">Edit</a>
-                            <a href="hapus/{{d.id}}" class="btn btn-danger">Hapus</a>
+                            <a href="detail/{{d.id}}" class="btn btn-primary">Detail</a>
+                            <a href="edit/{{d.id}}" class="btn btn-dark">Edit</a>
+                            <a href="hapus/{{d.id}}" class="btn btn-success">Hapus</a>
                         </td>
                     </tr>
                     {% endfor %}
