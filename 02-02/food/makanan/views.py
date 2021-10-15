@@ -31,6 +31,6 @@ def detail(request, id):
     data = models.makanan.objects.filter(id = id).first()
     print(data)
     return render(request,"makanan/detail.html",{
-        "detail.data": data
+        "dataDetail": data
     })
 

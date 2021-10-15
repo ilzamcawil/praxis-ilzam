@@ -29,5 +29,5 @@ def detail(request, id):
     data = models.minuman.objects.filter(id = id).first()
     print(data)
     return render(request,"minuman/detail.html",{
-        "detail.data": data
+        "dataDetail": data
     })

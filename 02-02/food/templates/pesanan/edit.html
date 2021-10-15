@@ -1,5 +1,22 @@
-<form action="" method="post">
+<form action="" method="POST">
     {% csrf_token %}
-    <input type="text" name="nama" value="{{detailData.nama}}">
-    <button type="submit">edit</button>
+    <label>Makanan</label>
+    <select class="form-select" name="makanan">
+        <option selected>Pilih</option>
+        {% for d in dataMakanan %}
+        <option value="{{d.id}}">{{d.nama}}</option>
+        {% endfor %}
+    </select>
+    <label>Jumlah</label>
+    <input type="text" name="jumlah_makanan" value="{{data.jumlah_makanan}}" class="form-control">
+    <label>Minuman</label>
+    <select class="form-select" name="minuman">
+        <option selected>Pilih</option>
+        {% for d in dataMinuman %}
+        <option value="{{d.id}}">{{d.nama}}</option>
+        {% endfor %}
+    </select>
+    <label>Jumlah</label>
+    <input type="text" name="jumlah_minuman" value="{{data.jumlah_minuman}}" class="form-control"><br>
+    <button type="submit" class="btn btn-primary">Tambah</button>
 </form>
